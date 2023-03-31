@@ -1,5 +1,8 @@
 import Image from 'next/image';
+import { Inter } from '@next/font/google';
 import styles from './page.module.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -49,10 +52,12 @@ export default function Home() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <h2>
+          <h2 className={inter.className}>
             Docs <span>-&gt;</span>
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
+          <p className={inter.className}>
+            Find in-depth information about Next.js features and API.
+          </p>
         </a>
 
         <a
@@ -61,10 +66,10 @@ export default function Home() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <h2>
+          <h2 className={inter.className}>
             Templates <span>-&gt;</span>
           </h2>
-          <p>Explore the Next.js 13 playground.</p>
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
         </a>
 
         <a
@@ -73,10 +78,10 @@ export default function Home() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <h2>
+          <h2 className={inter.className}>
             Deploy <span>-&gt;</span>
           </h2>
-          <p>
+          <p className={inter.className}>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
