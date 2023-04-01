@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from '@/service/products';
+
 import Link from 'next/link';
 import MeowArticle from '@/components/MeowArticle';
 
