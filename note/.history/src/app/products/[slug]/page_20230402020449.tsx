@@ -1,8 +1,6 @@
 import { getProduct, getProducts } from '@/service/products';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 3;
-
 export function generateMetadata({ params }: Props) {
   return {
     title: `제품의 이름: ${params.slug}`,
@@ -20,7 +18,7 @@ export default async function pants({ params: { slug } }: Props) {
     notFound();
   }
   // 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
-  return <div>{product.name}제품 설명 페이지</div>;
+  return <div>{product}바지 제품 설명 페이지</div>;
 }
 
 export async function generateStaticParams() {

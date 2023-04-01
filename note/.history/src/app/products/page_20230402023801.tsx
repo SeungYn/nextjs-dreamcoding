@@ -7,9 +7,7 @@ import Link from 'next/link';
 export default async function page() {
   // 서버 파일에 있는 제품의 리스트를 읽어와서 그걸 보여줌
   const products = await getProducts();
-  const res = await fetch('https://meowfacts.herokuapp.com', {
-    next: { revalidate: 3 },
-  });
+  const res = await fetch('https://meowfacts.herokuapp.com');
   const data = await res.json();
   const factText = data.data[0];
   return (
