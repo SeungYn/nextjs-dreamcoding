@@ -2,6 +2,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import styles from './layout.module.css';
+import { Open_Sans } from 'next/font/google';
+import { Nanum_Gothic } from 'next/font/google';
+
+const sans = Open_Sans({ subsets: ['latin'] });
+const gothic = Nanum_Gothic({ weight: '700', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '제품 사이트',
@@ -14,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={sans.className}>
       <body>
         <header className={styles.header}>
           <h1>Demo Note App</h1>

@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from '@/service/products';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 export const revalidate = 3;
@@ -20,7 +21,17 @@ export default async function pants({ params: { slug } }: Props) {
     notFound();
   }
   // 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
-  return <div>{product.name}제품 설명 페이지</div>;
+  return (
+    <>
+      <div>{product.name}제품 설명 페이지</div>
+      <Image
+        src={`/images/${product.identifier}.jpg`}
+        width='300'
+        height='300'
+        alt='옷들 이미지'
+      />
+    </>
+  );
 }
 
 export async function generateStaticParams() {
